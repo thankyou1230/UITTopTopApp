@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TOPTOP.LoginPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="MainLogo.png" Margin="0,-50,0,-40"/>
+            <Label Text="*Thông tin đăng nhập không chính xác" TextColor="Black" FontSize="Small" FontAttributes="Italic" Margin="60,0,0,-10" x:Name="LoginStatus"/>
+            <Entry WidthRequest="300" HorizontalOptions="Center" x:Name="userID" Placeholder="Email" />
+            <Entry IsPassword="True" WidthRequest="300" HorizontalOptions="Center" x:Name="password" Placeholder="Mật khẩu"/>
+            <Label Text="Đặt lại mật khẩu?" TextColor="#FF66C4"  HorizontalOptions="Start" x:Name="ForgotPassword" Margin="60,-5,0,30">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                </Label.GestureRecognizers>
+            </Label>
+            <Button Text="Đăng nhập" TextColor="Black" BackgroundColor="#17D8E2" WidthRequest="300" HorizontalOptions="Center" x:Name="SignInBtn" Clicked="SignInBtn_Clicked"/>
+            <FlexLayout Direction="Row" JustifyContent="SpaceBetween" AlignItems="Center" WidthRequest="300" HorizontalOptions="Center" Margin="0,20,0,20">
+                <BoxView Color="White" HeightRequest="1" WidthRequest="120" Opacity="0.5"/>
+                <Label Text="Hoặc" TextColor="White"/>
+                <BoxView Color="White" HeightRequest="1" WidthRequest="120" Opacity="0.5"/>
+            </FlexLayout>
+            <ImageButton Source="google.png" Aspect="AspectFill" CornerRadius="20" BackgroundColor="Black" WidthRequest="40" HorizontalOptions="Center" x:Name="GoogleSignInBtn" Clicked="GoogleSignInBtn_Clicked" />
+            <ActivityIndicator x:Name="Indicator" IsRunning="true" HorizontalOptions="Center" Color="#FF66C4" IsVisible="False"/>
+            <Label Text="Bạn chưa có tài khoản ? "  HorizontalOptions="Center" Margin="0,60,0,0"/>
+            <Label Text="Đăng ký ngay" TextColor="#FF66C4"  HorizontalOptions="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

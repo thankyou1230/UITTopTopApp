@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
+             x:Class="TOPTOP.MainTabs.ExploreTab" BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout Spacing="10">
+            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" HeightRequest="50">
+                <Entry x:Name="SearchInput" WidthRequest="280" MaxLength="100" Placeholder="Bạn muốn tìm gì ?" TextColor="White" TextChanged="SearchInput_TextChanged"/>
+                <Label x:Name="SearchBtn" Text="Tìm kiếm" FontSize="Small" TextColor="#FF66C4" FontAttributes="Bold" IsEnabled="False">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </FlexLayout>
+            <ActivityIndicator x:Name="Indicator" IsRunning="true" HorizontalOptions="Center" Color="#FF66C4" IsVisible="False"/>
+            <local:TabViewControl x:Name="resultView" HeaderBackgroundColor="Black" HeaderSelectionUnderlineColor="#FF66C4" HeaderSelectionUnderlineThickness="1" HeaderSelectionUnderlineWidth="30" HeaderTabTextFontSize="Small" HeaderTabTextColor="White" ContentHeight="650" >
+                <local:TabViewControl.ItemSource>
+                    <local:TabItem HeaderText="Người khác" HeaderTabTextFontSize="Small" HeaderTabTextFontAttributes="Bold">
+                        <CollectionView x:Name="resultUserView" ItemsLayout="VerticalGrid, 1" EmptyView="Không có video nào" SelectionChanged="resultUserView_SelectionChanged" SelectionMode="Single" IsVisible="False">
+                            <CollectionView.EmptyViewTemplate>
+                                <DataTemplate>
+                                    <Label Text="Không tìm thấy người phù hợp" TextColor="Gray" FontSize="Small" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                </DataTemplate>
+                            </CollectionView.EmptyViewTemplate>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="Start" HeightRequest="90">
+                                        <Frame WidthRequest="60" HeightRequest="60" CornerRadius="30" IsClippedToBounds="True" Padding="0" Margin="20,0,0,0">
+                                            <Image Source="{Binding Profile.Avatar}" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <StackLayout Margin="20,0,0,0" WidthRequest="150">
+                                            <Label Text="{Binding Profile.NickName}" TextColor="White" FontSize="Small" FontAttributes="Bold"/>
+                                            <FlexLayout Direction="Row" JustifyContent="Start" AlignItems="Center"  Margin="0,-5,0,0">
+                                                <Label Text="Lượt theo dõi: " TextColor="LightGray" FontSize="Micro"/>
+                                                <Label Text="{Binding FollowerCount}" TextColor="LightGray" FontSize="Micro"/>
+                                            </FlexLayout>
+                                        </StackLayout>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup Name="CommonStates">
+                                                <VisualState Name="Normal" />
+                                                <VisualState Name="Selected">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="BackgroundColor" Value="Black" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </FlexLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </local:TabItem>
+                    <local:TabItem HeaderText="Video" HeaderTabTextFontSize="Small" HeaderTabTextFontAttributes="Bold">
+                        <CollectionView x:Name="resultVideoView" ItemsLayout="VerticalGrid, 2" EmptyView="Không có video nào" SelectionChanged="resultVideoView_SelectionChanged" SelectionMode="Single" IsVisible="False">
+                            <CollectionView.EmptyViewTemplate>
+                                <DataTemplate>
+                                    <Label Text="Không tìm thấy video phù hợp" TextColor="Gray" FontSize="Small" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                </DataTemplate>
+                            </CollectionView.EmptyViewTemplate>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <StackLayout Spacing="5" Padding="10" Margin="0,0,0,5">
+                                        <Frame CornerRadius="5" HeightRequest="300" IsClippedToBounds="True" Padding="0" BackgroundColor="Black">
+                                            <Image Source="{Binding Video.ThumbnailUrl}" Aspect="AspectFill"/>
+                                        </Frame>
+                                        <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceBetween">
+                                            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="Start" HeightRequest="40" WidthRequest="120">
+                                                <Frame WidthRequest="20" HeightRequest="20" CornerRadius="10" IsClippedToBounds="True" Padding="0" Margin="5,0,10,0">
+                                                    <Image Source="{Binding OwnerProfile.Avatar}" Aspect="AspectFill"/>
+                                                </Frame>
+                                                <Label Text="{Binding OwnerProfile.NickName}" TextColor="White" FontSize="Micro"/>
+                                            </FlexLayout>
+                                            <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="End" HeightRequest="40" WidthRequest="120">
+                                                <Label Text="Likes:" TextColor="LightGray" FontSize="Micro"/>
+                                                <Label Text="{Binding Video.LikeCount}" TextColor="LightGray" FontSize="Micro"/>
+                                            </FlexLayout>
+                                        </FlexLayout>
+                                        <VisualStateManager.VisualStateGroups>
+                                            <VisualStateGroup Name="CommonStates">
+                                                <VisualState Name="Normal" />
+                                                <VisualState Name="Selected">
+                                                    <VisualState.Setters>
+                                                        <Setter Property="BackgroundColor" Value="Black" />
+                                                    </VisualState.Setters>
+                                                </VisualState>
+                                            </VisualStateGroup>
+                                        </VisualStateManager.VisualStateGroups>
+                                    </StackLayout>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </local:TabItem>
+                </local:TabViewControl.ItemSource>
+            </local:TabViewControl>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

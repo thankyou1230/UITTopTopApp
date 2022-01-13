@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "173553967718",
+    "project_id": "xamarinproject-708cd",
+    "storage_bucket": "xamarinproject-708cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:173553967718:android:993073b2010d99dacb43a7",
+        "android_client_info": {
+          "package_name": "com.companyname.toptop"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "173553967718-76128gn2q7uj1augdspfol1r71lok1pi.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.toptop",
+            "certificate_hash": "f9b9194ce68521d7095b7efedf774bc2befca626"
+          }
+        },
+        {
+          "client_id": "173553967718-kjtp9n5bvq97188h4d7jr2vrjccabr17.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.companyname.toptop",
+            "certificate_hash": "8d9cc1cba89c3a62550436bbbc289855a36e6ea3"
+          }
+        },
+        {
+          "client_id": "173553967718-mc6obiac3k6459tl5ishf6gjgsnav2qp.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAeobHFw2yHBP0bgrRCTQMRyv6F3BKjnx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "173553967718-mc6obiac3k6459tl5ishf6gjgsnav2qp.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xvp="http://xamarin.com/schemas/2020/toolkit"
+             xmlns:local="clr-namespace:TOPTOP.MainTabs"
+             x:Class="TOPTOP.MainTabs.VideoTab"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <RefreshView IsEnabled="True" x:Name="RefreshingView" RefreshColor="#FF66C4" Refreshing="RefreshingView_Refreshing">
+            <Grid>
+                <CollectionView x:Name="videosList" Scrolled="videosList_Scrolled" EmptyView="Không có video mới">
+                    <CollectionView.ItemsLayout>
+                        <LinearItemsLayout Orientation="Vertical"
+                               SnapPointsType="MandatorySingle"
+                               SnapPointsAlignment="Start" />
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ClassId="True" HeightRequest="{Binding Source={x:Static local:Constant.ScreenHeight}}" WidthRequest="{Binding Source={x:Static local:Constant.ScreenWidth}}">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="8*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                </Grid.ColumnDefinitions>
+                                <xvp:MediaElement Source="{Binding VideoDetails.Url}" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                      HeightRequest="{Binding Source={x:Static local:Constant.ScreenHeight}}"
+                                      ShowsPlaybackControls="False"
+                                      BackgroundColor="Black"
+                                      Aspect="AspectFit"
+                                      AutoPlay="True"
+                                      IsLooping="True" ClassId="True"
+                                >
+                                    <xvp:MediaElement.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_5"/>
+                                    </xvp:MediaElement.GestureRecognizers>
+                                </xvp:MediaElement>
+                                <FlexLayout Grid.Row="0" Grid.Column="1" Direction="Column" AlignItems="Center" JustifyContent="End">
+                                    <StackLayout Margin="0,0,0,120">
+                                        <ImageButton Source="{Binding OwnerDetails.Avatar}" x:Name="avatar" WidthRequest="50" HeightRequest="50" HorizontalOptions="Center" Margin="0,0,0,15" CornerRadius="25" Clicked="avatar_Clicked" BorderColor="White" BorderWidth="2" Aspect="AspectFill" ClassId="{Binding VideoDetails.Url}"/>
+                                        <Grid WidthRequest="30" HeightRequest="35" ClassId="{Binding VideoDetails.Url}">
+                                            <Image Source="notlike.png" WidthRequest="30" HeightRequest="35" Aspect="AspectFit"/>
+                                            <Image Source="liked.png" WidthRequest="30" HeightRequest="35" Aspect="AspectFit" IsVisible="{Binding VideoDetails.IsLiked}"/>
+                                            <Grid.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                            </Grid.GestureRecognizers>
+                                        </Grid>
+                                        <Label x:Name="likeCount" Text="{Binding VideoDetails.LikeCount}" HorizontalOptions="Center" FontSize="Micro" TextColor="White" FontAttributes="Bold" Margin="0,-5,0,10"/>
+                                        <Image Source="chat.png" x:Name="commentBtn" WidthRequest="30" HeightRequest="35" HorizontalOptions="Center" xvp:IconTintColorEffect.TintColor="WhiteSmoke" ClassId="{Binding VideoDetails.Url}">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label x:Name="commentCount" Text="{Binding VideoDetails.CommentCount}" HorizontalOptions="Center" FontSize="Micro" TextColor="White"  FontAttributes="Bold" Margin="0,-5,0,20"/>
+                                        <Image Source="share.png" x:Name="shareBtn" WidthRequest="30" HeightRequest="35" HorizontalOptions="Center" xvp:IconTintColorEffect.TintColor="WhiteSmoke" ClassId="{Binding VideoDetails.Url}">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_2"/>
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                    </StackLayout>
+                                </FlexLayout>
+                                <FlexLayout Grid.Row="0" Grid.Column="0" Direction="Column" AlignItems="Start" JustifyContent="End">
+                                    <StackLayout Margin="0,0,0,50">
+                                        <FlexLayout Direction="Row" JustifyContent="Start" AlignItems="Center"  Margin="15,0,0,0">
+                                            <Label Text="@" TextColor="White" FontSize="Small" FontAttributes="Bold"/>
+                                            <Label x:Name="nameLabel" Text="{Binding OwnerDetails.NickName}" TextColor="White" FontSize="Small" FontAttributes="Bold" ClassId="{Binding VideoDetails.Url}">
+                                                <Label.GestureRecognizers>
+                                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_3"/>
+                                                </Label.GestureRecognizers>
+                                            </Label>
+                                        </FlexLayout>
+                                        <Label x:Name="titleLabel" Text="{Binding VideoDetails.Title}" LineBreakMode="WordWrap" TextColor="White" FontSize="Small" Margin="15,0,0,0"/>
+                                    </StackLayout>
+                                </FlexLayout>
+                                <Grid.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_5"/>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_6" NumberOfTapsRequired="2"/>
+                                </Grid.GestureRecognizers>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Image Source="left.png" HeightRequest="30" WidthRequest="40" xvp:IconTintColorEffect.TintColor="White" Margin="10,10,0,0" x:Name="backBtn" HorizontalOptions="Start" VerticalOptions="Start">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_4"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <FlexLayout x:Name="switchView" Direction="Row" AlignItems="Center" JustifyContent="Center" HeightRequest="50" VerticalOptions="Start">
+                    <Label x:Name="OnlyFollowingOption" Text="Đang theo dõi" TextColor="White" FontAttributes="Bold" FontSize="Small" Opacity="0.3">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_7"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                    <Label Text="  |  " TextColor="White" FontAttributes="Bold" FontSize="Small" Opacity="0.5"/>
+                    <Label x:Name="NewestOption" Text="Mới nhất" TextColor="White" FontAttributes="Bold" FontSize="Small">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_8"/>
+                        </Label.GestureRecognizers>
+                    </Label>
+                </FlexLayout>
+            </Grid>
+        </RefreshView>
+    </ContentPage.Content>
+</ContentPage>

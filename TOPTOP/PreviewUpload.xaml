@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:xvp="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="TOPTOP.PreviewUpload">
+    <ContentPage.Content>
+        <Grid Margin="0,0,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="12*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <xvp:MediaElement x:Name="VideoPreview" Source="https://file-examples-com.github.io/uploads/2017/04/file_example_MP4_480_1_5MG.mp4" 
+                Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.RowSpan="2"
+                ShowsPlaybackControls="True"
+                BackgroundColor="Black"
+                Aspect="AspectFit">
+            </xvp:MediaElement>
+            <Button Text="Tải lên" xvp:ShadowEffect.Color="Black" BackgroundColor="#17D8E2" TextColor="White" Grid.Column="1" Grid.Row="0" CornerRadius="10" Margin="0,0,20,0" Clicked="Button_Clicked"/>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TOPTOP.Policy"
+             Title="Điều khoản dịch vụ"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <Label Text="Cập nhật mới nhất: Tháng 12 Năm 2021" TextColor="Black" FontSize="Small" FontAttributes="Italic"/>
+                <Label Text="1. Mối Quan Hệ Của Bạn Với Chúng Tôi" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                <Label Text="Chào mừng bạn đến với TopTop - nền tảng mạng xã hội video trực tuyến được cung cấp bởi hai học sinh đến từ UIT!"
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="Những điều Khoản sau đây tạo thành thỏa thuận ràng buộc về mặt pháp lý giữa bạn và chúng tôi. Vui lòng dành thời gian để đọc kỹ những Điều Khoản này."
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="2. Chấp Thuận Điều Khoản" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                <Label Text="Bằng việc truy cập hoặc sử dụng Dịch Vụ của chúng tôi, bạn xác nhận rằng bạn có thể thiết lập một hợp đồng ràng buộc với TopTop, rằng bạn chấp thuận các Điều Khoản này và đồng ý tuân thủ các Điều Khoản. Việc bạn truy cập và sử dụng Dịch Vụ của chúng tôi cũng phải tuân thủ Chính Sách Quyền Riêng Tư và Chính Sách Cộng Đồng của chúng tôi, mà các điều khoản của các chính sách đó có thể được tìm thấy trực tiếp trên Nền Tảng, hoặc nơi mà Nền Tảng được cung cấp để tải xuống, trên cửa hàng ứng dụng dành cho thiết bị di động của bạn, và được kết hợp trong Điều Khoản này bằng việc dẫn chiếu. Bằng việc sử dụng Dịch Vụ, bạn đồng ý với các điều khoản của Chính Sách Quyền Riêng Tư."
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="Nếu bạn truy cập hoặc sử dụng Dịch Vụ từ khu vực pháp lý mà có các điều khoản bổ sung riêng áp dụng cho khu vực đó, bạn tại đây cũng đồng ý với các điều khoản bổ sung được áp dụng cho người dùng tại từng khu vực pháp lý như được liệt kê dưới đây, và trong trường hợp có mâu thuẫn giữa các quy định của Điều Khoản Bổ Sung – Dành Riêng Theo Khu Vực Pháp Lý mà có liên quan đến khu vực pháp lý của bạn nơi mà từ đó bạn truy cập hoặc sử dụng Dịch Vụ, và các quy định của các Điều Khoản này, thì Điều Khoản Bổ Sung – Dành Riêng Theo Khu Vực Pháp Lý của khu vực pháp lý liên quan sẽ được ưu tiên áp dụng và kiểm soát. Nếu bạn không đồng ý với các Điều Khoản này, bạn không được truy cập hoặc sử dụng Dịch Vụ của chúng tôi."
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="Nếu bạn đang truy cập hoặc sử dụng Dịch Vụ trên danh nghĩa của một cơ sở kinh doanh hoặc thực thể, thì (a) thuật ngữ bạn và của bạn bao gồm cả bạn và cơ sở kinh doanh hoặc thực thể đó, (b) bạn tuyên bố và đảm bảo rằng bạn là người đại diện có thẩm quyền của cơ sở kinh doanh hoặc thực thể đó có thẩm quyền để ràng buộc thực thể đó với các Điều Khoản này, và bạn đồng ý với các Điều Khoản này trên danh nghĩa của thực thể, và (c) cơ sở kinh doanh hoặc thực thể của bạn chịu trách nhiệm về mặt pháp lý và tài chính cho việc bạn truy cập và sử dụng Dịch Vụ cũng như việc truy cập và sử dụng tài khoản của bạn bởi các bên khác mà liên kết với thực thể của bạn, bao gồm bất kỳ nhân viên, đại lý hoặc nhà thầu nào."
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="3. Thay Đổi Điều Khoản" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                <Label Text="Chúng tôi sửa đổi các Điều Khoản này tùy từng thời điểm, ví dụ như khi chúng tôi cập nhật tính năng Dịch Vụ của mình, khi chúng tôi kết hợp nhiều ứng dụng hoặc dịch vụ do chúng tôi hoặc các bên liên kết của chúng tôi vận hành thành một dịch vụ hoặc ứng dụng duy nhất được kết hợp, hoặc khi có sự thay đổi về quy định. Chúng tôi sẽ nỗ lực một cách hợp lý về khía cạnh thương mại để thông báo chung cho tất cả người dùng về bất kỳ thay đổi quan trọng nào đối với các Điều Khoản này, chẳng hạn như thông báo trên Nền Tảng của chúng tôi, tuy nhiên, bạn phải thường xuyên xem Điều Khoản để kiểm tra những thay đổi đó. Chúng tôi cũng sẽ cập nhật ngày Cập Nhật Mới Nhất ở phần đầu của các Điều Khoản này, mà thể hiện ngày hiệu lực của các Điều Khoản đó. Việc bạn tiếp tục truy cập hoặc sử dụng Dịch Vụ sau ngày hiệu lực của Điều Khoản mới cấu thành sự chấp thuận của bạn đối với Điều Khoản mới. Nếu bạn không đồng với Điều Khoản mới, bạn phải chấm dứt việc truy cập hoặc sử dụng Dịch Vụ."
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="4. Tài Khoản Của Bạn Với Chúng Tôi" TextColor="Black" FontSize="Subtitle" FontAttributes="Bold"/>
+                <Label Text="Để truy cập hoặc sử dụng Dịch Vụ của chúng tôi, bạn phải tạo một tài khoản với chúng tôi. Khi bạn tạo tài khoản này, bạn phải cung cấp thông tin chính xác và mới nhất. Điều quan trọng là bạn phải duy trì và cập nhật kịp thời các thông tin chi tiết của bạn và bất kỳ thông tin nào mà bạn cung cấp cho chúng tôi, để giữ cho các thông tin đó là thông tin hiện thời và đầy đủ."
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="Lưu ý quan trọng là bạn phải giữ bí mật mật khẩu tài khoản của mình và bạn không được tiết lộ mật khẩu đó với bất kỳ bên thứ ba nào. Nếu bạn biết hoặc nghi ngờ rằng bất kỳ bên thứ ba nào biết được mật khẩu hoặc đã truy cập vào tài khoản của bạn, bạn phải ngay lập tức thông báo cho chúng tôi tại 18520140@gm.uit.edu.vn"
+                       TextColor="Black" LineBreakMode="WordWrap" FontSize="Small" Margin="20,0,0,0"/>
+                <Label Text="UIT - Copyright 2021" Margin="20,20,0,20" FontSize="Small" TextColor="Black" FontAttributes="Italic"/>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

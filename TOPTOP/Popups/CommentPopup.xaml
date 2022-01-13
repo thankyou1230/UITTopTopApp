@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+             xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+             x:Class="TOPTOP.Popups.CommentPopup"
+             HasSystemPadding="True">
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            PositionIn="Bottom"
+            PositionOut="Bottom"
+            ScaleIn="1.2"
+            ScaleOut="0.8"
+            DurationIn="200"
+            DurationOut="200"
+            EasingIn="SinOut"
+            EasingOut="SinIn"
+            HasBackgroundAnimation="True"/>
+    </pages:PopupPage.Animation>
+    <!--You can use any elements here which are extended from Xamarin.Forms.View-->
+    <Frame VerticalOptions="End" HeightRequest="350" BackgroundColor="Azure" CornerRadius="20">
+        <StackLayout>
+            <Label Text="0 bình luận" Margin="0,-15,0,0" HorizontalOptions="Center" TextColor="Black" x:Name="commentCountLabel" FontSize="Micro" FontAttributes="Bold"/>
+            <BoxView BackgroundColor="LightGray" HeightRequest="0.5" Margin="0,0,0,-5"/>
+            <CollectionView x:Name="commentsList" EmptyView="Để lại bình luận cho video này nhé" HeightRequest="320">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Margin="10,0,10,10">
+                            <FlexLayout Direction="Row" JustifyContent="Start" AlignItems="Center" Margin="0,10,0,0">
+                                <Frame WidthRequest="35" HeightRequest="35" CornerRadius="17.5" Padding="0" Margin="0,0,5,0">
+                                    <Image x:Name="Avatar" Source="{Binding User.Avatar}"  Aspect="AspectFill" ClassId="{Binding User.Email}">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </Frame>
+                                <Label Text="{Binding User.NickName}" FontSize="Small" FontAttributes="Bold" TextColor="Black" ClassId="{Binding User.Email}">
+                                    <Label.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Label.GestureRecognizers>
+                                </Label>
+                                <Label Text="Tác giả" FontSize="Small" FontAttributes="Italic" TextColor="#FF66C4" IsVisible="{Binding Comment.IsOwner}" Margin="10,0,0,0"/>
+                            </FlexLayout>
+                            <Label Text="{Binding Comment.CommentContent}" FontSize="Small" TextColor="Black" LineBreakMode="WordWrap" Margin="45,-10,0,0"/>
+                            <Label Text="{Binding Comment.CommentTime}" FontSize="Micro" FontAttributes="Italic" TextColor="Gray" Margin="45,0,0,0"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <FlexLayout Direction="Row" JustifyContent="SpaceAround" AlignItems="Center" Margin="0,0,0,-17">
+                <Entry x:Name="CommentEntry" WidthRequest="280" Placeholder="Để lại bình luân ..." PlaceholderColor="Gray" TextColor="Black" MaxLength="150" TextChanged="Entry_TextChanged" />
+                <Button x:Name="SendCommentBtn" Text="Gửi" HeightRequest="35" WidthRequest="70" BackgroundColor="#FF66C4" TextColor="White" FontSize="Micro" FontAttributes="Bold" Clicked="SendCommentBtn_Clicked" IsEnabled="False"/>
+            </FlexLayout>
+        </StackLayout>
+    </Frame>
+</pages:PopupPage>

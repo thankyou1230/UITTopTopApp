@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:Xam.Plugin.TabView;assembly=Xam.Plugin.TabView"
+             x:Class="TOPTOP.OtherDetailFollowPage" BackgroundColor="Black">
+    <NavigationPage.TitleView>
+        <Label x:Name="Title" Text="Chi tiết theo dõi" HorizontalOptions="Center" Margin="-70,0,0,0"/>
+    </NavigationPage.TitleView>
+    <ContentPage.Content>
+        <local:TabViewControl HeaderBackgroundColor="Black" HeaderSelectionUnderlineColor="#FF66C4" HeaderSelectionUnderlineThickness="1" HeaderSelectionUnderlineWidth="30" HeaderTabTextFontSize="Small" HeaderTabTextColor="White">
+            <local:TabViewControl.ItemSource>
+                <local:TabItem HeaderText="Đang theo dõi">
+                    <CollectionView x:Name="FollowingView" SelectionChanged="FollowingView_SelectionChanged" SelectionMode="Single" Margin="0,20,0,0" EmptyView="Hiện không theo dõi người khác">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" HeightRequest="90">
+                                    <Frame WidthRequest="60" HeightRequest="60" CornerRadius="30" IsClippedToBounds="True" Padding="0">
+                                        <Image Source="{Binding User.Avatar}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <StackLayout Margin="-30,0,0,0" WidthRequest="150">
+                                        <Label Text="{Binding User.NickName}" TextColor="White" FontSize="Small" FontAttributes="Bold"/>
+                                        <Label Text="{Binding User.Email}" TextColor="LightGray" FontSize="Micro" Margin="0,-5,0,0"/>
+                                    </StackLayout>
+                                    <Button Text="{Binding ButtonText}" BackgroundColor="{Binding ButtonColor}" TextColor="Black" FontSize="Micro" WidthRequest="110" HeightRequest="35" CornerRadius="2" Clicked="Button_Clicked" ClassId="{Binding User.Email}" IsEnabled="{Binding IsEnable}"/>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Black" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </FlexLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </local:TabItem>
+                <local:TabItem HeaderText="Người theo dõi">
+                    <CollectionView x:Name="FollowerView" SelectionChanged="FollowerView_SelectionChanged" SelectionMode="Single" Margin="0,20,0,0" EmptyView="Không có ai theo dõi" >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <FlexLayout Direction="Row" AlignItems="Center" JustifyContent="SpaceAround" HeightRequest="90">
+                                    <Frame WidthRequest="60" HeightRequest="60" CornerRadius="30" IsClippedToBounds="True" Padding="0">
+                                        <Image Source="{Binding User.Avatar}" Aspect="AspectFill"/>
+                                    </Frame>
+                                    <StackLayout Margin="-30,0,0,0" WidthRequest="150">
+                                        <Label Text="{Binding User.NickName}" TextColor="White" FontSize="Small" FontAttributes="Bold"/>
+                                        <Label Text="{Binding User.Email}" TextColor="LightGray" FontSize="Micro" Margin="0,-5,0,0"/>
+                                    </StackLayout>
+                                    <Button Text="{Binding ButtonText}" BackgroundColor="{Binding ButtonColor}" TextColor="Black" FontSize="Micro" WidthRequest="110" HeightRequest="35" CornerRadius="2" Clicked="Button_Clicked" ClassId="{Binding User.Email}" IsEnabled="{Binding IsEnable}"/>
+                                    <VisualStateManager.VisualStateGroups>
+                                        <VisualStateGroup Name="CommonStates">
+                                            <VisualState Name="Normal" />
+                                            <VisualState Name="Selected">
+                                                <VisualState.Setters>
+                                                    <Setter Property="BackgroundColor" Value="Black" />
+                                                </VisualState.Setters>
+                                            </VisualState>
+                                        </VisualStateGroup>
+                                    </VisualStateManager.VisualStateGroups>
+                                </FlexLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </local:TabItem>
+            </local:TabViewControl.ItemSource>
+        </local:TabViewControl>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TOPTOP.SignUpPage"
+             BackgroundColor="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="LogoIcon.png" Margin="0,50,0,0" WidthRequest="150" HeightRequest="150"/>
+            <Label Text="CHÀO MỪNG ĐẾN TOPTOP!" TextColor="#FF66C4" Margin="0,0,0,50" FontSize="Large" FontFamily="Lobster" FontAttributes="Bold" HorizontalTextAlignment="Center"/>
+            <Entry WidthRequest="300" HorizontalOptions="Center" x:Name="userNickname" Placeholder="Nickname" TextChanged="userNickname_TextChanged"/>
+            <Label Text="Status notifications" TextColor="Red" FontSize="Small" FontAttributes="Italic" Margin="60,-10,0,0" x:Name="nicknameStatus"/>
+            <Entry WidthRequest="300" HorizontalOptions="Center" x:Name="userEmail" Placeholder="Email" />
+            <Label Text="Status notifications" TextColor="Red" FontSize="Small" FontAttributes="Italic" Margin="60,-10,0,0" x:Name="emailStatus"/>
+            <Entry IsPassword="True" WidthRequest="300" HorizontalOptions="Center" x:Name="password" Placeholder="Mật khẩu"/>
+            <Label Text="Status notifications" TextColor="Red" FontSize="Small" FontAttributes="Italic" Margin="60,-10,0,0" x:Name="passwordStatus"/>
+            <Entry IsPassword="True" WidthRequest="300" HorizontalOptions="Center" x:Name="confirmedPassword" Placeholder="Xác nhận mật khẩu"/>
+            <Label Text="Status notifications" TextColor="Red" FontSize="Small" FontAttributes="Italic" Margin="60,-10,0,0" x:Name="confirmedPasswordStatus"/>
+            <Button Text="đăng ký" WidthRequest="300" BackgroundColor="#17D8E2" HorizontalOptions="Center" Margin="0,30,0,65" x:Name="signUpBtn" Clicked="signUpBtn_Clicked"/>
+            <Label Text="Bằng cách nhấn vào nút đăng ý là bạn đã đồng ý với" HorizontalTextAlignment="Center" />
+            <Label Text="Điều khoản dịch vụ và bảo mật" TextColor="#FF66C4" HorizontalTextAlignment="Center">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Label.GestureRecognizers>
+            </Label>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

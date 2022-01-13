@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:xvp="http://xamarin.com/schemas/2020/toolkit"
+             x:Class="TOPTOP.MainTabs.UploadTab" Background="Black">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Hãy chia sẻ khoảnh khắc của bạn !" FontSize="Medium" FontAttributes="Bold" TextColor="#17D8E2" Margin="0,40,0,250" HorizontalOptions="Center"/>
+            <FlexLayout Direction="Row" JustifyContent="Center" AlignItems="Center" HorizontalOptions="Center">
+                <Frame IsClippedToBounds="True" HeightRequest="50" WidthRequest="50" CornerRadius="25" xvp:ShadowEffect.Color="#17D8E2"
+                       BackgroundColor="#FF66C4" Margin="0,0,40,0" xvp:ShadowEffect.Radius="4" xvp:ShadowEffect.Opacity="1">
+                    <Image Source="camera.png" Aspect="AspectFill" xvp:IconTintColorEffect.TintColor="White"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame IsClippedToBounds="True" HasShadow="True" HeightRequest="50" WidthRequest="50" CornerRadius="25" xvp:ShadowEffect.Color="#17D8E2"
+                       BackgroundColor="#FF66C4" Margin="40,0,0,0" xvp:ShadowEffect.Radius="2">
+                    <Image Source="upload.png" Aspect="AspectFill"  xvp:IconTintColorEffect.TintColor="White"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped_1"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </FlexLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
